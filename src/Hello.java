@@ -5,25 +5,54 @@ Scanner scan = new Scanner(System.in);
 사용: String line = scan.nextLine(), scan.next(), scan.nextInt(), scan.nextFloat(), scan.nextDouble()
 window) 파일 경로 지정할 때 역슬래쉬 두 번*/
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 class Hello {
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		int kor, eng, math, total;
 		double avg;
 		kor = 0;
 		eng = 0;
 		math = 0;
-
+		
+		//파일 입력
+		//1. 파일 입력 스트림 객체를 fis라는 이름으로 만들어야 해~
+		FileInputStream fis = new FileInputStream("/Users/nevermind/Desktop/newlec/workspace/javaprj/data.txt");
+		//2. fis를 Scanner로 포장해서 사용해 봐~
+		Scanner scan1 = new Scanner(fis);
+		kor = scan1.nextInt();
+		eng = scan1.nextInt();
+		math = scan1.nextInt();
+		//3. 스캔 닫고 파일 닫기
+		scan1.close();
+		fis.close();
+		
+		//파일 출력
+		//1. 파일 출력 스트림 객체를 fos라는 이름으로 만들어야 돼~
+		FileOutputStream fos = new FileOutputStream("/Users/nevermind/Desktop/newlec/workspace/javaprj/data.txt");
+		//2.fos를 PrintStream으로 포장해서 사용해 봐~
+		PrintStream fout = new PrintStream(fos);
+		kor = kor + 1;
+		eng = eng + 1;
+		
+		fout.printf("%d %d %d", kor, eng, math);
+		//3. 객체 닫고 파일 닫기
+		fout.close();
+		fos.close();
+		
 		//성적 입력 코드
 		
-		Scanner scan = new Scanner(System.in);
+		/*Scanner scan = new Scanner(System.in);
 		System.out.print("국어 성적을 입력하세요: ");
 		kor = scan.nextInt();
 		System.out.print("수학 성적을 입력하세요: ");
 		math = scan.nextInt();
 		System.out.print("영어 성적을 입력하세요: ");
-		eng = scan.nextInt();
+		eng = scan.nextInt();*/
 
 		total = kor + eng + math;
 		avg = total / 3.0;
