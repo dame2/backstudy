@@ -1,11 +1,9 @@
-package ex1.bit;
+package homework;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class program {
-
+public class homework_0304 {
 	public static void main(String[] args) throws IOException {
 
 		// 1. 이미지 파일을 읽기 위한 파일입력스트림을 fis로 생성주시오.
@@ -58,5 +56,6 @@ public class program {
 		System.out.printf("fileSize: %d\n", fileSize);
 		
 		fis.close();
+	
 	}
 }

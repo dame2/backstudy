@@ -7,13 +7,12 @@ import java.io.IOException;
 public class program {
 
 	public static void main(String[] args) throws IOException {
-
 		// 1. 이미지 파일을 읽기 위한 파일입력스트림을 fis로 생성주시오.
 		FileInputStream fis = new FileInputStream("res/img.bmp");
-		// 2. 1바이트가 정수형으로 읽어오는 것, 끝까 지 읽었으면 -1 반환
+		// 2. read() 1바이트가 정수형으로 읽어오는 것, 끝까지 읽었으면 -1 반환을 위해 int로 read() 받음
 
-		// 초반 2 바이트를 버리는 이유? signiture
-		// FileSize 8바이트부터 읽는
+		// 초반 2바이트를 버리는 이유? signiture
+		// FileSize 4바이트
 		int b;
 		b = fis.read();
 		b = fis.read();
@@ -30,6 +29,7 @@ public class program {
 		fileSize = b3; // [][][][b3];
 		fileSize = b4; // [][][][b4];
 
+		//big endian 고성능 cpu
 		// 0x000000 24bit
 
 		// 16진수: 0x20
