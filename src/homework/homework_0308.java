@@ -38,7 +38,7 @@ public class homework_0308 {
 						System.out.println("입력 범위 0~100 값만 입력할 수 있습니다");
 						System.out.printf("국어 : ");
 						kor = Integer.parseInt(scan.nextLine());
-						korR = kor < 0 || kor > 100;}
+						korR = kor < 0 || kor > 100;}//다시 계산해서 알려 줘야 됨 
 					
 					else if(engR) {
 						System.out.println("입력 범위 0~100 값만 입력할 수 있습니다");

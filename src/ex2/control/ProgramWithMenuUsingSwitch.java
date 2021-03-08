@@ -17,7 +17,6 @@ public class ProgramWithMenuUsingSwitch {
 			
 			EXIT:
 			while(more){
-			// 메뉴를 왜 앞에 선언하는가?
 			System.out.println("┌────────────────────┐");
 			System.out.println("│      　메인 메뉴      │");
 			System.out.println("└────────────────────┘");
@@ -44,7 +43,6 @@ public class ProgramWithMenuUsingSwitch {
 
 				// menu의 값이 2이라면
 			case 2:
-				// total이랑 avg는 상단부에 미리 정의하면 안 되는가?
 				total = kor + eng + math;
 				avg = total / 3.0f;
 
