@@ -10,7 +10,7 @@ public class ProgramWithMenuUsingSwitch {
 		kor = 0;
 		eng = 0;
 		math = 0;
-
+		
 		Boolean more = true;
 		Scanner scan = new Scanner(System.in);
 
@@ -18,7 +18,6 @@ public class ProgramWithMenuUsingSwitch {
 			EXIT:
 			while(more){
 			// 메뉴를 왜 앞에 선언하는가?
-			int menu;
 			System.out.println("┌────────────────────┐");
 			System.out.println("│      　메인 메뉴      │");
 			System.out.println("└────────────────────┘");
@@ -26,7 +25,7 @@ public class ProgramWithMenuUsingSwitch {
 			System.out.println("2. 성적 출력");
 			System.out.println("3. 종료");
 			System.out.print("> ");
-			menu = Integer.parseInt(scan.nextLine());
+			int menu = Integer.parseInt(scan.nextLine());
 			
 			switch (menu) {
 			// menu의 값이 1이라면
