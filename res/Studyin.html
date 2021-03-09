@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://127.0.0.1:5500/homework/2021-03-08.html -->
+<html lang="en"><!-- Mission
+    -homework-0302.html과 css/style-homework.css를 연결하여 레이아웃을 구분해 보자
+    -최소 3개의 id 사용
+    -min-height, background-color, overflow 사용 --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=&gt;, initial-scale=1.0">
+    <title>Studyin</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #header {
+            height: 200px;
+            width: 100%;
+            background-color: cadetblue
+        }
+
+            #header .cat {
+                height: 30%;
+                width: inherit;
+                background-color: darkred;
+            }
+
+            #header .dog {
+                height: 20%;
+                width: inherit;
+                background-color: orange;
+            }
+
+            #header .rabbit {
+                height: 20%;
+                width: inherit;
+                background-color: yellow;
+            }
+
+        #body {
+            width: 1000px;
+            min-height: 500px;
+            background-color: cornsilk;
+            margin-left: auto;
+            margin-right: auto;
+            display:flex;
+        }
+
+            #aside {
+                min-height: 100%;
+                width: 300px;
+                background-color: darkblue;
+                opacity:0.6;
+            }
+
+            #main {
+                min-height: 100%;
+                width: 500px;
+                background-color:pink;
+                opacity:0.6;
+            }
+
+        #footer {
+            height: 200px;
+            width: 100%;
+            background-color:khaki;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            
+            <div class="cat">cat</div>
+            <div class="dog">dog</div>
+            <div class="rabbit">rabbit</div>
+        </div>
+    </header>
+
+    <div id="body">
+        <aside>
+            <div id="aside">
+                aside
+            </div>
+        </aside>
+
+        <main>
+            <div id="main">
+                main
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div id="footer">
+            footer
+        </div>
+    </footer>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<div id="dicLayer" style="width: 400px; height: 150px; display: none;"><div id="dicLayerContents"></div><div id="dicLayerSub"></div></div><div id="dicRawData" style="display: none;"></div><div id="dicLayerLoader"></div></body></html>
