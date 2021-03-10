@@ -18,9 +18,10 @@ public class CopyProgram {
 		int size = 0;
 		byte[] buf = new byte[1000];
 		
-		while ((size = fis.read()) != -1)
-				fos.write(buf);
-		
+		while ((size = fis.read(buf)) != -1) {
+				System.out.println(size);
+				fos.write(buf, 0, size);
+		}
 		// 3. 2 번을 더 이상 읽어들일 값이 없을 때까지 반복한다.
 		System.out.println("복사 완료");
 		
