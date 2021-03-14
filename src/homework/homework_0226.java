@@ -4,25 +4,7 @@ package homework;
 
 class Homework_210226 {
 	public static void main(String[] args) {
-		int kor, eng, math, total;
-		double avg;
-		kor = 80;
-		eng = 70;
-		math = 100;
-
-		total = kor + eng + math;
-		avg = total / 3.0;
-
-		System.out.println("┌────────────────────────────┐");
-		System.out.println("│          성적 출력           │");
-		System.out.println("└────────────────────────────┘");
-
-		System.out.printf("국어 1: %3.2f\n", (double)kor);
-		System.out.printf("수학 1: %3.2f\n", (double)math);
-		System.out.printf("영어 1: %3.2f\n", (double)eng);
-
-		System.out.printf("총점: %3.2f\n", (double)total);
-		System.out.printf("평균: %3.2f\n", avg);//형변환은 타입이 다를 때 사용하기 때문에 중복하지 않도록 한다.
-		
+		int[] array = new int[3];
+		System.out.print(array);
 	}
 }
