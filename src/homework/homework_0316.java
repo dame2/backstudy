@@ -56,8 +56,9 @@ public class homework_0316 {
 			}
 		}
 		
-		System.out.printf("확진자가 제일 많은 날: %d", rows[idx][0]);
-		System.out.printf("확진자 수: %d", rows[idx][0]);
+		System.out.printf("확진자가 제일 많은 날: %s", rows[idx][0]);
+		System.out.println();
+		System.out.printf("확진자 수: %s", rows[idx][1]);
 
 	}
 }
