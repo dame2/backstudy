@@ -2,6 +2,7 @@ package ex3.array;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Program4MultiArray {
@@ -25,6 +26,8 @@ public class Program4MultiArray {
 			}
 			fscan.close();
 			fis.close();
+			
+			count--;
 		}
 
 		// 레코드를 로드하는 코드
@@ -74,7 +77,7 @@ public class Program4MultiArray {
 		String date = "";
 		int idx = 0;
 		int current;
-
+		
 		for (int i = 0; i < count; i++) {
 			current = Integer.parseInt(rows[i][3]);
 			if (current > max) {
@@ -91,19 +94,47 @@ public class Program4MultiArray {
 
 		// 확진자 수가 늘어난 일자와 수를 출력하시오.
 		int diff = 0;
+		int resultCount = 0;
 		current = Integer.parseInt(rows[0][1]);
-		
+
 		for (int i = 1; i < count; i++) {
 			int next = Integer.parseInt(rows[i][1]);
-			
+
 			if (next != current) {
 				diff = next - current;
 				date = rows[i][0];
 				current = next;
-				System.out.printf("%d: %s, %d\n", i+1, date, diff);
+				resultCount++;
 			}
 
-		} 
+		}
+
+		// 확진자 수가 늘어난 일자와 수를 다음 배열에 담아 주세요.
+		String[][] results;
+		int num = 0;
+		results = new String[resultCount][2];
+
+		{
+			current = Integer.parseInt(rows[0][1]);
+				for (int i = 1; i < count; i++) {
+					int next = Integer.parseInt(rows[i][1]);
+					
+					if (next != current) {
+						diff = next - current;
+						date = rows[i][0];
+						
+						results[num][0] = date; // date
+						results[num][1] = String.valueOf(diff); // diff
+						current = next;
+						num++;
+					}
+				}
+			
+			for (int i = 0; i < results.length; i++) {
+				System.out.println(Arrays.toString(results[i]));
+			}
+		}
 		
+	
 	}
 }
