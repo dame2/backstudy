@@ -123,10 +123,15 @@ public class Program4MultiArray {
 						diff = next - current;
 						date = rows[i][0];
 						
-						results[num][0] = date; // date
-						results[num][1] = String.valueOf(diff); // diff
+						String[] row = new String[2];
+						row[0] = date;
+						row[1] = String.valueOf(diff);
+						
+						results[num++]=row;
 						current = next;
-						num++;
+//						results[num][0] = date; // date
+//						results[num][1] = String.valueOf(diff); // diff
+//						num++;
 					}
 				}
 			
