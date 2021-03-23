@@ -1,6 +1,7 @@
 package ex5.fnc;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -27,11 +28,21 @@ public class Program3MultiArray3 {
 			return total;
 		
 	}
+	static void printMax(String[][] rows, int count) {
+		int max = 0;
+
+		for (int i = 0; i < count; i++) {
+			int current = Integer.parseInt(rows[i][3]);
+			if (current > max)
+				max = current;
+		}
+		System.out.printf("max: %d\n", max);
+	}
 
 	public static void main(String[] args) throws IOException {
 
 		int count = 0;
-		String[][] rows;
+		String[][] rows = null;
 		// ---------------------------------------------------------
 		// 레코드 개수를 알아내는 코드
 		{
@@ -52,23 +63,7 @@ public class Program3MultiArray3 {
 		// --------------------------------------------------------
 
 		// 레코드를 로드하는 코드
-		{
-			rows = new String[count][];
-			FileInputStream fis = new FileInputStream("res/covid19.csv");
-			Scanner fscan = new Scanner(fis);
-
-			String line;
-
-			fscan.nextLine();
-
-			for (int i = 0; i < count; i++) {
-				line = fscan.nextLine();
-				rows[i] = line.split(",");
-			}
-
-			fscan.close();
-			fis.close();
-		}
+		load(rows, count);
 		// ---------------------------------------------------------
 		// 레코드를 출력하는 코드
 		printCovid19List(rows, count);
@@ -81,21 +76,14 @@ public class Program3MultiArray3 {
 		System.out.println();
 
 		// 1.일별 가장 많은 검사진행수는? 몇입니꽈~
+		printMax(rows, count);
 		// 2.감사진행수가 가장 많았던 날짜는?
+		int max = 0;
 		{
-			// 1번 문제를 위한 변수
-			int max = 0;
-			int current;
-
 			// 2번 문제를 위한 변수
 			String date = "";
 			int idx = 0;
 
-			for (int i = 0; i < count; i++) {
-				current = Integer.parseInt(rows[i][3]);
-				if (current > max)
-					max = current;
-			}
 
 			for (int i = 0; i < count; i++)
 				if (max == Integer.parseInt(rows[i][3])) {
@@ -103,35 +91,13 @@ public class Program3MultiArray3 {
 					break;
 				}
 
-			System.out.println(max);
-			System.out.println();
 
 			System.out.printf("%s", rows[idx][0]);
 			System.out.println();
 		}
 
 		// 확진자 수가 늘어난 일자와 수를 출력하시오.
-		{
-			String date = "";
-			int diff = 0;
-
-			int old = 0; // 현재 확진자 수
-			int index = 0;
-			for (int i = 0; i < count; i++) {
-				int current = Integer.parseInt(rows[i][1]);
-
-				if (old != current) {
-
-					diff = current - old;
-					date = rows[i][0];
-
-					old = current;
-					System.out.printf("%d : %s, %d\n", index++ + 1, date, diff);
-
-				}
-			}
-
-		}
+		printA(rows, count);
 
 		// 확진자 수가 늘어난 일자와 수를 다음 배열에 담아주시오.
 		String[][] results;
@@ -184,6 +150,49 @@ public class Program3MultiArray3 {
 
 			System.out.println("작업완료");
 
+		}
+
+	}
+
+	private static void load(String[][] rows, int count) throws IOException {
+
+			rows = new String[count][];
+			FileInputStream fis = new FileInputStream("res/covid19.csv");
+			Scanner fscan = new Scanner(fis);
+
+			String line;
+
+			fscan.nextLine();
+
+			for (int i = 0; i < count; i++) {
+				line = fscan.nextLine();
+				rows[i] = line.split(",");
+			}
+
+			fscan.close();
+			fis.close();
+
+		
+	}
+
+	private static void printA(String[][] rows, int count){
+		String date = "";
+		int diff = 0;
+
+		int old = 0; // 현재 확진자 수
+		int index = 0;
+		for (int i = 0; i < count; i++) {
+			int current = Integer.parseInt(rows[i][1]);
+
+			if (old != current) {
+
+				diff = current - old;
+				date = rows[i][0];
+
+				old = current;
+				System.out.printf("%d : %s, %d\n", index++ + 1, date, diff);
+
+			}
 		}
 
 	}
