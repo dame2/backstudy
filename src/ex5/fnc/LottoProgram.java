@@ -18,6 +18,7 @@ public class LottoProgram {
 	}
 
 	private static void sort(int[] lotto) {
+		for(int j=0;j<lotto.length;j++)
 		for (int i = 0; i < lotto.length - 1; i++)
 			if (lotto[i] > lotto[i + 1]) {
 				int temp = lotto[i];

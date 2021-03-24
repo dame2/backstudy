@@ -18,18 +18,19 @@ public class homework_0323 {
 	}
 
 	private static void sort(int[] lotto) {
-		for (int i = 0; i < lotto.length - 1; i++)
-			if (lotto[i] > lotto[i + 1]) {
-				int temp = lotto[i];
-				lotto[i] = lotto[i + 1];
-				lotto[i + 1] = temp;
-			}
+		for (int j = 0; j < lotto.length; j++)
+			for (int i = 0; i < lotto.length - 1; i++)
+				if (lotto[i] > lotto[i + 1]) {
+					int temp = lotto[i];
+					lotto[i] = lotto[i + 1];
+					lotto[i + 1] = temp;
+				}
 	}
 
 	private static void print(int[] lotto) {
 		for (int i = 0; i < lotto.length; i++) {
 			System.out.printf("%d", lotto[i]);
-			if (i < lotto.length-1)
+			if (i < lotto.length - 1)
 				System.out.printf(",");
 			else
 				System.out.println();
