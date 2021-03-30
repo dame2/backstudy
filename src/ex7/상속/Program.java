@@ -1,15 +1,17 @@
 package ex7.상속;
 
-import ex6.capsule.lotto.Object.Lotto;
-import ex6.capsule.lotto.Object.LottoConsole;
-
+/*
+ * 상속:
+ * Has A 상속
+ * Is A 상속
+ */
 public class Program {
 
 	public static void main(String[] args) {
 		Lotto lotto = new Lotto();
-		lotto.init();
 		lotto.gen();
-		LottoConsole.print(lotto);
+		LottoConsole console = new LottoConsole();
+		console.print();
 	}
 
 }
