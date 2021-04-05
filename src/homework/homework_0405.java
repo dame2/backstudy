@@ -11,53 +11,57 @@ public class homework_0405 {
 
 
 		for (int i = 0; i < 4; i++) {
-			System.out.printf("%s: %d", season[i].change(), season[i].getTemp());
+			System.out.printf("%s: %d\n", season[i].change(), season[i].getTemp());
 		}
 	}
-
-	abstract class Season {
-		int temp;
-		public abstract String change();
-		
-		public int getTemp() {
-			return temp;
-		}
+}
+abstract class Season {
+	private int temp;
+	public Season(int temp) {
+		this.temp = temp;
 	}
-
-	class Spring extends Season {
-		public Spring() {
-			temp = 12;
-		}
-		public String change() {
-			return "Spring";
-		}
+	public abstract String change();
+	
+	public int getTemp() {
+		return temp;
 	}
+}
 
-	class Summer extends Season {
-		public Summer() {
-			temp = 33;
-		}
-		public String change() {
-			return "Summer";
-		}
+class Spring extends Season {
+	public Spring() {
+		super(12);
 	}
-
-	class Fall extends Season {
-		public Fall() {
-			temp = 21;
-		}
-		public String change() {
-			return "Fall";
-		}
+	public String change() {
+		return "Spring";
 	}
+}
 
-	class Winter extends Season {
-		public Winter() {
-			temp = 1;
-		}
-		public String change() {
-			return "Winter";
-		}
+
+
+class Summer extends Season {
+	public Summer() {
+		super(33);
 	}
+	public String change() {
+		return "Summer";
+	}
+}
 
+
+class Fall extends Season {
+	public Fall() {
+		super(21);
+	}
+	public String change() {
+		return "Fall";
+	}
+}
+
+class Winter extends Season {
+	public Winter() {
+		super(1);
+	}
+	public String change() {
+		return "Winter";
+	}
 }
