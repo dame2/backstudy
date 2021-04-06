@@ -1,4 +1,4 @@
-package ex8.추상화;
+package ex9.인터페이스;
 
 public class YBMExam extends Exam{
 	private int toeic;
@@ -9,7 +9,7 @@ public class YBMExam extends Exam{
 	}
 	@Override
 	public int total() {
-		return baseTotal() + toeic;
+		return super.total() + toeic;
 	}
 	@Override
 	public float avg() {

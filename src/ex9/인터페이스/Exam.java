@@ -1,4 +1,4 @@
-package ex8.추상화;
+package ex9.인터페이스;
 
 public abstract class Exam {
 	private int kor;
@@ -24,36 +24,9 @@ public abstract class Exam {
 		return this.kor + eng + math;
 	}
 	
-	protected int baseTotal() {
-		return this.kor+eng+math;
+	public int total() {
+		return this.kor + eng + math;
 	}
-	public abstract int total();
 	
 	public abstract float avg();
-
-	public int getKor() {
-		return kor;
-	}
-
-	public void setKor(int kor) {
-		this.kor = kor;
-	}
-
-	public int getEng() {
-		return eng;
-	}
-
-	public void setEng(int eng) {
-		this.eng = eng;
-	}
-
-	public int getMath() {
-		return math;
-	}
-
-	public void setMath(int math) {
-		this.math = math;
-	}
-	
-	
 }

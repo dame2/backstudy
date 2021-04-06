@@ -1,4 +1,4 @@
-package ex8.추상화;
+package ex9.인터페이스;
 
 public class NewExam extends Exam {
 	private int com;
@@ -18,7 +18,7 @@ public class NewExam extends Exam {
 
 	@Override
 	public int total() {
-		return baseTotal() + com;
+		return super.total() + com;
 	}
 
 	@Override
