@@ -54,6 +54,6 @@ public abstract class Exam {
 	public void setMath(int math) {
 		this.math = math;
 	}
-	
+
 	
 }

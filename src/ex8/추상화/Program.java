@@ -9,15 +9,16 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		Exam exam = new YBMExam(1,1,1,1);
+		Exam exam = new YBMExam(1,1,1,1,1);
 		
-		ExamConsole console = new ExamConsole(); // Constructor DI
-		console.setExam(exam); //Setter DI
-		console.print();
+//		ExamConsole console = new ExamConsole(); // Constructor DI
+//		console.setExam(exam); //Setter DI
+//		console.print();
 		
 		YBMExamConsole ybmConsole = new YBMExamConsole();
 		ybmConsole.setExam(exam);
 		
+		ybmConsole.input();
 		ybmConsole.print();
 		
 		
