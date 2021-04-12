@@ -18,7 +18,7 @@ public class NewExam extends Exam {
 
 	@Override
 	public int total() {
-		return super.total() + com;
+		return baseTotal() + com;
 	}
 
 	@Override

@@ -1,6 +1,9 @@
-package ex9.인터페이스;
+package ex9.인터페이스.exam.ybm;
 
-public class YBMExam extends Exam implements Banner{
+import ex9.인터페이스.exam.Banner;
+import ex9.인터페이스.exam.Exam;
+
+public class YBMExam extends Exam{
 	private int toeic;
 	private int aa;
 	
@@ -34,17 +37,7 @@ public class YBMExam extends Exam implements Banner{
 	public float avg() {
 		return total() / 5.0f;
 	}
-	@Override
-	public void print() {
-		System.out.println("---------------");
-		System.out.println("  YBM 성적 출력  ");
-		System.out.println("---------------");
-	}
 
-	@Override
-	public void printEnd() {
-		System.out.println("---------------");
-	}
 
 
 }

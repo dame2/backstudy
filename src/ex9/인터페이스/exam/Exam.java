@@ -1,4 +1,4 @@
-package ex9.인터페이스;
+package ex9.인터페이스.exam;
 
 public abstract class Exam {
 	private int kor;
